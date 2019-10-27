@@ -20,20 +20,17 @@ matrix:
   include:
     - jdk: openjdk11
       env:
-        - MVN_FLAG='-Djenkins.version=2.164.1 -Daccess-modifier-checker.failOnError=true'
+        - MVN_FLAG='-Djenkins.version=2.164.3 -Daccess-modifier-checker.failOnError=true'
     - jdk: openjdk8
       env:
-        - MVN_FLAG='-Djenkins.version=2.164.1 -Daccess-modifier-checker.failOnError=true'
+        - MVN_FLAG='-Djenkins.version=2.164.3 -Daccess-modifier-checker.failOnError=true'
     - jdk: openjdk8
 
 install:
-  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V $MVN_FLAG -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
-
+  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true
 script:
   - |
-    mvn clean install -B \
-      -Djava.level=$JAVA_LEVEL \
-      $MVN_FLAG -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+    mvn clean install
 
 notifications:
   email: false
