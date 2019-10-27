@@ -1,0 +1,18 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+    <f:entry title="${%GRAFANA_HOST}" field="GRAFANA_HOST">
+            <f:textbox />
+    </f:entry>
+    <f:entry title="${%API_TOKEN}" field="API_TOKEN">
+            <f:textbox />
+    </f:entry>
+    <f:entry title="${%TAGS}" field="TAGS">
+            <f:textbox />
+    </f:entry>
+    <f:entry title="${%TIME_FROM}" field="TIME_FROM">
+                <f:textbox />
+    </f:entry>
+    <f:entry title="${%TIME_TO}" field="TIME_TO">
+                    <f:textbox />
+    </f:entry>
+</j:jelly>
